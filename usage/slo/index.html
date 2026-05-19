@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="HTTP request visualizer with detailed timing breakdown">
+        <meta name="description" content="Use --slo to gate requests on per-phase latency budgets in CI, cron, and uptime checks.">
       
       
         <meta name="author" content="Sergei Ozeranskii">
       
       
-        <link rel="canonical" href="https://httptap.dev/getting-started/installation/">
+        <link rel="canonical" href="https://httptap.dev/usage/slo/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../output-formats/">
       
       
-        <link rel="next" href="../quick-start/">
+        <link rel="next" href="../advanced/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Installation - httptap Documentation</title>
+        <title>SLO Threshold Checking - httptap Documentation</title>
       
     
     
@@ -63,17 +63,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Installation - httptap Documentation" />
-<meta property="og:description" content="HTTP request visualizer with detailed timing breakdown" />
-<meta property="og:image" content="https://httptap.dev/assets/images/social/getting-started/installation.png" />
+<meta property="og:title" content="SLO Threshold Checking - httptap Documentation" />
+<meta property="og:description" content="Use --slo to gate requests on per-phase latency budgets in CI, cron, and uptime checks." />
+<meta property="og:image" content="https://httptap.dev/assets/images/social/usage/slo.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://httptap.dev/getting-started/installation/" />
+<meta property="og:url" content="https://httptap.dev/usage/slo/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Installation - httptap Documentation" />
-<meta property="twitter:description" content="HTTP request visualizer with detailed timing breakdown" />
-<meta property="twitter:image" content="https://httptap.dev/assets/images/social/getting-started/installation.png" />
+<meta property="twitter:title" content="SLO Threshold Checking - httptap Documentation" />
+<meta property="twitter:description" content="Use --slo to gate requests on per-phase latency budgets in CI, cron, and uptime checks." />
+<meta property="twitter:image" content="https://httptap.dev/assets/images/social/usage/slo.png" />
 </head>
   
   
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#slo-threshold-checking" class="md-skip">
           Skip to content
         </a>
       
@@ -225,7 +225,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              SLO Threshold Checking
             
           </span>
         </div>
@@ -402,8 +402,6 @@
       
   
   
-    
-  
   
   
     
@@ -416,11 +414,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -441,7 +441,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -456,37 +456,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -502,231 +475,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-via-homebrew" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installing via Homebrew
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-from-pypi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installing from PyPI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-via-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running via Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-from-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installing from Source
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing from Source">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#clone-the-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clone the repository
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-with-uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install with uv
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-with-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install with pip
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Upgrading
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uninstalling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Uninstalling
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell-completions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Shell Completions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Shell Completions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#homebrew-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Homebrew Installation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-package-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python Package Installation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Python Package Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Activation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What's Next?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -739,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-start/" class="md-nav__link">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
         
   
   
@@ -771,8 +519,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -783,13 +533,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -810,7 +558,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -828,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/basic/" class="md-nav__link">
+      <a href="../basic/" class="md-nav__link">
         
   
   
@@ -856,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/output-formats/" class="md-nav__link">
+      <a href="../output-formats/" class="md-nav__link">
         
   
   
@@ -881,10 +629,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../usage/slo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO Threshold Checking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -900,6 +675,242 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malformed-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Malformed specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rich-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rich (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics-only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cron-based-synthetic-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cron-based synthetic monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-gate-after-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI gate after deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-readiness-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes readiness probe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression bar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-host-canary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-host canary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -912,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         
   
   
@@ -1463,10 +1474,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#quick-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requirements
+        Quick Example
       
     </span>
   </a>
@@ -1474,55 +1485,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-via-homebrew" class="md-nav__link">
+  <a href="#specification-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing via Homebrew
+        Specification Syntax
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-from-pypi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installing from PyPI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-via-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running via Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-from-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installing from Source
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing from Source">
+    <nav class="md-nav" aria-label="Specification Syntax">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clone-the-repository" class="md-nav__link">
+  <a href="#supported-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clone the repository
+        Supported keys
       
     </span>
   </a>
@@ -1530,21 +1508,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-with-uv" class="md-nav__link">
+  <a href="#malformed-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install with uv
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-with-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install with pip
+        Malformed specifications
       
     </span>
   </a>
@@ -1557,10 +1524,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-installation" class="md-nav__link">
+  <a href="#evaluation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying Installation
+        Evaluation Rules
       
     </span>
   </a>
@@ -1568,10 +1535,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrading" class="md-nav__link">
+  <a href="#exit-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upgrading
+        Exit Codes
       
     </span>
   </a>
@@ -1579,33 +1546,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uninstalling" class="md-nav__link">
+  <a href="#output-formats" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uninstalling
+        Output Formats
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell-completions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Shell Completions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Shell Completions">
+    <nav class="md-nav" aria-label="Output Formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homebrew-installation" class="md-nav__link">
+  <a href="#rich-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Homebrew Installation
+        Rich (default)
       
     </span>
   </a>
@@ -1613,38 +1569,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-package-installation" class="md-nav__link">
+  <a href="#compact" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python Package Installation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Python Package Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Activation
+        Compact
       
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#metrics-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics-only
+      
+    </span>
+  </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#json-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
+        JSON Export
       
     </span>
   </a>
@@ -1657,10 +1607,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
+  <a href="#recipes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What's Next?
+        Recipes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cron-based-synthetic-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cron-based synthetic monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-gate-after-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI gate after deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-readiness-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes readiness probe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression bar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-host-canary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-host canary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
       
     </span>
   </a>
@@ -1687,219 +1709,266 @@
   
 
 
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>Before installing httptap, ensure you have:</p>
+<h1 id="slo-threshold-checking">SLO Threshold Checking<a class="headerlink" href="#slo-threshold-checking" title="Permanent link">&para;</a></h1>
+<p><code>httptap --slo</code> checks measured timings against per-phase latency
+budgets and exits with a non-zero code when any budget is exceeded.
+This turns a single request into a pass/fail probe suitable for CI
+gates, cron-based synthetic monitoring, uptime checks, and
+post-deployment smoke tests — without writing a custom shell parser.</p>
+<h2 id="quick-example">Quick Example<a class="headerlink" href="#quick-example" title="Permanent link">&para;</a></h2>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>httptap<span class="w"> </span>--slo<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">500</span>,ttfb<span class="o">=</span><span class="m">200</span><span class="w"> </span>https://api.example.com/health
+</span></code></pre></div>
 <ul>
-<li><strong>Python 3.10 or higher</strong> (CPython recommended)</li>
-<li><strong>pip</strong> or <strong>uv</strong> package manager</li>
-<li><strong>macOS, Linux, or Windows</strong> operating system</li>
+<li>Exits with <code>0</code> when <code>total_ms ≤ 500</code> <strong>and</strong> <code>ttfb_ms ≤ 200</code>.</li>
+<li>Exits with <code>4</code> when any budget is exceeded.</li>
+<li>Continues to print the full waterfall and JSON export regardless of
+  the outcome, so investigations are never blocked by the gate.</li>
 </ul>
-<p>No system dependencies beyond standard networking are required.</p>
-<h2 id="installing-via-homebrew">Installing via Homebrew<a class="headerlink" href="#installing-via-homebrew" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Linux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>brew<span class="w"> </span>install<span class="w"> </span>httptap
+<h2 id="specification-syntax">Specification Syntax<a class="headerlink" href="#specification-syntax" title="Permanent link">&para;</a></h2>
+<p>Pass a comma-separated list of <code>KEY=MS</code> pairs to <code>--slo</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--slo KEY=MS[,KEY=MS]*
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Recommended for macOS/Linux users</p>
-<p>Homebrew installation is the simplest method and includes automatic shell completion setup.</p>
-</div>
-<h2 id="installing-from-pypi">Installing from PyPI<a class="headerlink" href="#installing-from-pypi" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Using uv (recommended)</label><label for="__tabbed_2_2">Using pip</label><label for="__tabbed_2_3">Using pipx</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>httptap
-</span></code></pre></div>
-<p>Or install as a global tool:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>For isolated CLI tool installation:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pipx<span class="w"> </span>install<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="running-via-container">Running via Container<a class="headerlink" href="#running-via-container" title="Permanent link">&para;</a></h2>
-<p>Signed multi-arch (linux/amd64, linux/arm64) images are published to GitHub Container Registry on every release:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>ghcr.io/ozeranskii/httptap:latest<span class="w"> </span>https://example.com
-</span></code></pre></div>
-<p>Verify the image signature with <a href="https://docs.sigstore.dev/cosign/overview/">cosign</a> (keyless Sigstore):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cosign<span class="w"> </span>verify<span class="w"> </span>ghcr.io/ozeranskii/httptap:latest<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>--certificate-identity-regexp<span class="w"> </span><span class="s1">&#39;https://github\.com/ozeranskii/httptap/\.github/workflows/release\.yml@.*&#39;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>--certificate-oidc-issuer<span class="w"> </span>https://token.actions.githubusercontent.com
-</span></code></pre></div>
-<p>Pinned major/minor tags (e.g. <code>:0</code>, <code>:0.5</code>, <code>:0.5.0</code>) are also published.</p>
-<h2 id="installing-from-source">Installing from Source<a class="headerlink" href="#installing-from-source" title="Permanent link">&para;</a></h2>
-<h3 id="clone-the-repository">Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ozeranskii/httptap.git
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>httptap
-</span></code></pre></div>
-<h3 id="install-with-uv">Install with uv<a class="headerlink" href="#install-with-uv" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>uv<span class="w"> </span>sync
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span></code></pre></div>
-<h3 id="install-with-pip">Install with pip<a class="headerlink" href="#install-with-pip" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: .venv\Scripts\activate</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span></code></pre></div>
-<h2 id="verifying-installation">Verifying Installation<a class="headerlink" href="#verifying-installation" title="Permanent link">&para;</a></h2>
-<p>After installation, verify that httptap is correctly installed:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>httptap<span class="w"> </span>--version
-</span></code></pre></div>
-<p>You should see output similar to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>httptap X.Y.Z
-</span></code></pre></div>
-<h2 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">&para;</a></h2>
-<p>To upgrade httptap to the latest version:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Using Homebrew</label><label for="__tabbed_3_2">Using uv</label><label for="__tabbed_3_3">Using pip</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>brew<span class="w"> </span>upgrade<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="uninstalling">Uninstalling<a class="headerlink" href="#uninstalling" title="Permanent link">&para;</a></h2>
-<p>To remove httptap from your system:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Using Homebrew</label><label for="__tabbed_4_2">Using uv</label><label for="__tabbed_4_3">Using pip</label><label for="__tabbed_4_4">Using pipx</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>brew<span class="w"> </span>uninstall<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>pipx<span class="w"> </span>uninstall<span class="w"> </span>httptap
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="shell-completions">Shell Completions<a class="headerlink" href="#shell-completions" title="Permanent link">&para;</a></h2>
-<p>httptap supports shell completions for bash and zsh.</p>
-<h3 id="homebrew-installation">Homebrew Installation<a class="headerlink" href="#homebrew-installation" title="Permanent link">&para;</a></h3>
-<p>If you installed httptap via Homebrew, <strong>completions are automatically configured</strong>. Simply restart your shell:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Restart your shell</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">exec</span><span class="w"> </span><span class="nv">$SHELL</span>
-</span></code></pre></div>
-<p>Homebrew automatically places completion scripts in:</p>
 <ul>
-<li><strong>Bash</strong>: <code>$(brew --prefix)/etc/bash_completion.d/</code></li>
-<li><strong>Zsh</strong>: <code>$(brew --prefix)/share/zsh/site-functions/</code></li>
+<li><code>KEY</code> is one of the supported timing phases (case-insensitive).</li>
+<li><code>MS</code> is a positive finite number of milliseconds (integer or float).</li>
+<li>Whitespace around keys and values is tolerated.</li>
 </ul>
-<div class="admonition success">
-<p class="admonition-title">No additional setup required</p>
-<p>Homebrew handles all completion setup automatically. Just restart your shell and start using Tab completion!</p>
-</div>
-<h3 id="python-package-installation">Python Package Installation<a class="headerlink" href="#python-package-installation" title="Permanent link">&para;</a></h3>
-<p>If you installed httptap via <code>pip</code>, <code>uv</code>, or <code>pipx</code>, you need to install the optional <code>completion</code> extras:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Using uv</label><label for="__tabbed_5_2">Using pip</label><label for="__tabbed_5_3">Using pipx</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;httptap[completion]&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;httptap[completion]&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>pipx<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;httptap[completion]&quot;</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<h4 id="activation">Activation<a class="headerlink" href="#activation" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>Activate your virtual environment (if using venv):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-</li>
-<li>
-<p>Run the global activation script:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>activate-global-python-argcomplete
-</span></code></pre></div>
-</li>
-<li>
-<p>Restart your shell.</p>
-</li>
-</ol>
-<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>Once installed and activated, you can use <code>Tab</code> to autocomplete commands and options:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Complete command options</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>httptap<span class="w"> </span>--&lt;TAB&gt;
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Complete after typing partial option</span>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>httptap<span class="w"> </span>--fol&lt;TAB&gt;
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="c1"># Completes to: httptap --follow</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1"># Complete multiple options</span>
-</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>httptap<span class="w"> </span>--follow<span class="w"> </span>--time&lt;TAB&gt;
-</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="c1"># Completes to: httptap --follow --timeout</span>
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The global activation script provides argument completions for bash and zsh only. Other shells are not covered by the script and must be configured separately.</p>
-</div>
-<hr />
-<h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
+<h3 id="supported-keys">Supported keys<a class="headerlink" href="#supported-keys" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dns</code></td>
+<td>DNS resolution time</td>
+</tr>
+<tr>
+<td><code>connect</code></td>
+<td>TCP connection establishment</td>
+</tr>
+<tr>
+<td><code>tls</code></td>
+<td>TLS handshake (<code>0</code> for plain HTTP)</td>
+</tr>
+<tr>
+<td><code>ttfb</code></td>
+<td>Time to first byte (DNS + connect + TLS + server wait)</td>
+</tr>
+<tr>
+<td><code>wait</code></td>
+<td>Server processing time (<code>ttfb - (dns + connect + tls)</code>)</td>
+</tr>
+<tr>
+<td><code>xfer</code></td>
+<td>Response body transfer time (<code>total - ttfb</code>)</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>End-to-end request duration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="malformed-specifications">Malformed specifications<a class="headerlink" href="#malformed-specifications" title="Permanent link">&para;</a></h3>
+<p><code>--slo</code> rejects the following and exits with <code>64</code> (usage error):</p>
 <ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg></span> <strong><a href="../quick-start/">Quick Start Guide</a></strong></p>
-<hr />
-<p>Learn the basics with simple examples</p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"/></svg></span> <strong><a href="../../usage/basic/">Basic Usage</a></strong></p>
-<hr />
-<p>Complete command-line reference</p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg></span> <strong><a href="../../api/overview/">API Reference</a></strong></p>
-<hr />
-<p>Use httptap programmatically</p>
-</li>
+<li>Empty specification (<code>--slo ""</code>).</li>
+<li>Unknown key (<code>--slo foo=500</code> → <code>Unknown SLO key 'foo'</code>).</li>
+<li>Duplicate key (<code>--slo total=500,total=600</code>).</li>
+<li>Non-numeric value (<code>--slo total=fast</code>).</li>
+<li>Zero, negative, or non-finite value (<code>--slo total=0</code>, <code>total=nan</code>,
+  <code>total=inf</code>).</li>
+<li>Missing <code>=</code> (<code>--slo total500</code>).</li>
 </ul>
-</div>
+<p>The specific error is printed in a Rich-formatted panel for
+interactive use, and in plain text under <code>--metrics-only</code>.</p>
+<h2 id="evaluation-rules">Evaluation Rules<a class="headerlink" href="#evaluation-rules" title="Permanent link">&para;</a></h2>
+<p>SLO thresholds are evaluated against the <strong>final successful step</strong> of
+a request chain:</p>
+<ul>
+<li>Single request → checked against that request.</li>
+<li>Redirect chain (<code>--follow</code>) → checked against the terminal response,
+  not the intermediate redirects. The assumption is that users care
+  about what actually served their request.</li>
+<li>All steps errored → SLO is skipped entirely; the exit code reflects
+  the network failure (see below).</li>
+</ul>
+<p>A threshold passes when <code>actual ≤ threshold</code>. Equality does <strong>not</strong>
+count as a violation. Violations are reported in alphabetical order of
+their key for deterministic output.</p>
+<h2 id="exit-codes">Exit Codes<a class="headerlink" href="#exit-codes" title="Permanent link">&para;</a></h2>
+<p><code>--slo</code> integrates with the overall exit-code precedence of <code>httptap</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Priority</th>
+<th>Condition</th>
+<th style="text-align: center;">Exit code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Invalid arguments (bad <code>--slo</code> spec)</td>
+<td style="text-align: center;"><code>64</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Network / TLS failure on any step</td>
+<td style="text-align: center;"><code>75</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Internal error</td>
+<td style="text-align: center;"><code>70</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>SLO violation on final successful step</td>
+<td style="text-align: center;"><code>4</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Success</td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Network errors always take precedence over SLO violations, so a
+failing host does not masquerade as a latency regression in a CI log.</p>
+<h2 id="output-formats">Output Formats<a class="headerlink" href="#output-formats" title="Permanent link">&para;</a></h2>
+<h3 id="rich-default">Rich (default)<a class="headerlink" href="#rich-default" title="Permanent link">&para;</a></h3>
+<p>After the waterfall and any redirect summary, <code>httptap</code> prints a panel
+summarising the SLO evaluation:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>╭───────────────── ✗ SLO: fail ─────────────────╮
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│ Thresholds: total≤500ms, ttfb≤200ms            │
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│ Violations:                                    │
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   • total: 723.4ms &gt; 500ms (+223.4ms)          │
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   • ttfb:  315.2ms &gt; 200ms (+115.2ms)          │
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>╰────────────────────────────────────────────────╯
+</span></code></pre></div>
+<p>The panel border and icon match the status: green <code>✓</code> for pass, red
+<code>✗</code> for fail.</p>
+<h3 id="compact">Compact<a class="headerlink" href="#compact" title="Permanent link">&para;</a></h3>
+<p><code>--compact</code> prints one human-readable line per step followed by the
+same Rich SLO panel shown under the default mode:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Step 1: 200 GET https://api.example.com | dns=3.3ms connect=97.0ms tls=194.6ms ttfb=446.0ms total=900.0ms | 1.2 KB
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>╭───────────────── ✗ SLO: fail ─────────────────╮
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│ Thresholds: total≤500ms                        │
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│ Violations:                                    │
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   • total: 900.0ms &gt; 500ms (+400.0ms)          │
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>╰────────────────────────────────────────────────╯
+</span></code></pre></div>
+<h3 id="metrics-only">Metrics-only<a class="headerlink" href="#metrics-only" title="Permanent link">&para;</a></h3>
+<p><code>--metrics-only</code> appends SLO tokens to the standard <code>key=value</code> line
+of the final successful step:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Step 1: dns=30.1 connect=97.3 tls=199.0 ttfb=472.2 total=900.0 ... slo=fail slo_violations=total,ttfb
+</span></code></pre></div>
+<p>Pass case:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Step 1: ... proxy=direct slo=pass
+</span></code></pre></div>
+<p>Intermediate redirect steps do <strong>not</strong> carry SLO tokens, keeping the
+line count unchanged.</p>
+<h3 id="json-export">JSON Export<a class="headerlink" href="#json-export" title="Permanent link">&para;</a></h3>
+<p><code>--json PATH</code> extends the <code>summary</code> block with an <code>slo</code> object:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;total_time_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">900.0</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;final_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;final_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.example.com/health&quot;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;final_bytes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">&quot;slo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nt">&quot;pass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">&quot;thresholds_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;ttfb&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">200.0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">&quot;violations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;total&quot;</span><span class="p">,</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">          </span><span class="nt">&quot;threshold_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">          </span><span class="nt">&quot;actual_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">900.0</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">          </span><span class="nt">&quot;delta_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">400.0</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Each violation carries the key, the user-supplied threshold, the
+measured value, and the overrun. <code>delta_ms</code> is strictly positive and
+can be used to rank violations by severity.</p>
+<p>When no <code>--slo</code> flag is passed the <code>slo</code> key is absent — the summary
+shape is backward compatible with existing consumers.</p>
+<h2 id="recipes">Recipes<a class="headerlink" href="#recipes" title="Permanent link">&para;</a></h2>
+<h3 id="cron-based-synthetic-monitoring">Cron-based synthetic monitoring<a class="headerlink" href="#cron-based-synthetic-monitoring" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>* * * * * httptap --slo total=1000,ttfb=500 https://api.example.com/health \
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  || curl -X POST https://alerts.example.com/page/oncall
+</span></code></pre></div>
+<h3 id="ci-gate-after-deploy">CI gate after deploy<a class="headerlink" href="#ci-gate-after-deploy" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Smoke-test staging latency</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="no">httptap --slo total=2000,tls=300,ttfb=800 \</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="no">https://staging.example.com/</span>
+</span></code></pre></div>
+<p>The step fails only on exit <code>4</code> or <code>64</code>. Network errors (exit <code>75</code>)
+can be handled separately:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Smoke-test staging latency</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smoke</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">continue-on-error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httptap --slo total=2000 https://staging.example.com/</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail CI only on SLO violation</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">steps.smoke.outcome == &#39;failure&#39; &amp;&amp; steps.smoke.conclusion != &#39;success&#39;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="no">if [ &quot;${{ steps.smoke.outputs.exit_code }}&quot; = &quot;4&quot; ]; then</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="no">echo &quot;SLO violation — failing build.&quot;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">      </span><span class="no">exit 1</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="no">fi</span>
+</span></code></pre></div>
+<h3 id="kubernetes-readiness-probe">Kubernetes readiness probe<a class="headerlink" href="#kubernetes-readiness-probe" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">readinessProbe</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">exec</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httptap</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--slo</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total=5000</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:8080/healthz</span>
+</span></code></pre></div>
+<h3 id="regression-bar">Regression bar<a class="headerlink" href="#regression-bar" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>httptap<span class="w"> </span>--slo<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">500</span>,ttfb<span class="o">=</span><span class="m">200</span><span class="w"> </span>--json<span class="w"> </span>regression.json<span class="w"> </span>https://prod.example.com/
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>jq<span class="w"> </span><span class="s1">&#39;.summary.slo.violations&#39;</span><span class="w"> </span>regression.json
+</span></code></pre></div>
+<h3 id="multi-host-canary">Multi-host canary<a class="headerlink" href="#multi-host-canary" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="k">in</span><span class="w"> </span>prod-eu<span class="w"> </span>prod-us<span class="w"> </span>prod-ap<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span>httptap<span class="w"> </span>--slo<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">1500</span><span class="w"> </span><span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">host</span><span class="si">}</span><span class="s2">.example.com/health&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">host</span><span class="si">}</span><span class="s2">: SLO miss&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">done</span>
+</span></code></pre></div>
+<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Start with <code>--slo total=&lt;P95 latency&gt;</code> and add per-phase budgets
+  once you have baseline data from <code>--json</code> exports.</li>
+<li><code>xfer</code> and <code>wait</code> are derived metrics; their sum is bounded by
+  <code>total</code>. If you set a <code>total</code> budget the individual phases are
+  implicitly capped.</li>
+<li>Combine with <code>--timeout</code>: <code>--slo</code> checks latency <em>after</em> the
+  request completed; <code>--timeout</code> hard-kills a request that hangs. You
+  usually want both.</li>
+<li>SLO output mirrors
+  <a href="https://github.com/reorx/httpstat#slo-thresholds"><code>httpstat</code>'s <code>--slo</code></a>
+  format (<code>slo=pass</code> / <code>slo=fail</code> tokens, exit code <code>4</code>), so scripts
+  can be used interchangeably.</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
